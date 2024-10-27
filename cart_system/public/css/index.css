@@ -1,0 +1,248 @@
+.scrolling-text-container {
+    background-color: #eff5ff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.scrolling-text-inner {
+    display: flex;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.scrolling-text {
+    display: flex;
+}
+
+.scrolling-text-item {
+    padding: 0 30px;
+}
+
+.scrolling-text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Fira Code', monospace;
+}
+
+.scrolling-text-inner > .scrolling-text {
+    display: flex;
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+.scrolling-text-container:hover .scrolling-text {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.shop-title {
+    background-color: #222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.shop-title-left img {
+    height: 300px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.shop-title-right {
+    margin-right: 60px;
+    animation: float 3s ease-in-out infinite;
+    margin-left: 50px;
+}
+
+.shop-title-right img {
+    height: 380px;
+    rotate: 30deg;
+}
+
+.shop-title-left {
+    margin-left: 60px;
+}
+
+.sparkle {
+    position: absolute;
+    top: -40px;
+    left: -60px;
+    margin: 10px;
+    z-index: 1;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.sparkle img {
+    height: 150px;
+    width: auto;
+    opacity: 0.8;
+}
+
+.shop-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.spiral {
+    position: relative;
+    top: 240px;
+    left: 40px;
+}
+
+.spiral-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.spiral img {
+    height: 100px;
+    width: auto;
+    opacity: 0.8;
+}
+
+.spiral .hover-text {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.spiral:hover .hover-text {
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-title-left img,
+    .sparkle img,
+    .shop-title-right img {
+        max-height: 110px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: left;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 10px 10px 0 0;
+}
+
+.product-info {
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add-to-cart {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
